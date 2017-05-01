@@ -282,6 +282,6 @@ void Main() {
 
 
 # ◆ 第 3 部 ◆ Siv3D を学ぼう
-Siv3D 公式 Web サイトのチュートリアルに沿って、Siv3D の基本機能を学びます。
+Siv3D 公式 Web サイトのチュートリアルに沿って、Siv3D の基本機能を学びます。  
 [Siv3D チュートリアル 1](https://github.com/Siv3D/Reference-JP/wiki/Siv3D%E3%81%AE%E5%9F%BA%E6%9C%AC)
 
