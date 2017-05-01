@@ -368,3 +368,36 @@ void Main()
 Siv3D 公式 Web サイトのチュートリアルに沿って、Siv3D の基本機能を学びます。  
 - [Siv3D チュートリアル 1](https://github.com/Siv3D/Reference-JP/wiki/Siv3D%E3%81%AE%E5%9F%BA%E6%9C%AC)
 
+
+おまけ
+ルービックキューブ（途中）
+```cpp
+# include <Siv3D.hpp>
+
+void Main()
+{
+	double r = 0.0;
+
+	while (System::Update())
+	{
+		r += 0.01;
+
+		Graphics3D::FreeCamera();
+
+		for (int z = 0; z < 3; ++z)
+		{
+			for (int y = 0; y < 3; ++y)
+			{
+				for (int x = 0; x < 3; ++x)
+				{
+					Box(x - 1, y - 1, z - 1, 1)
+						.asMesh()
+						.rotated(Quaternion::RollPitchYaw(0, r, 0))
+						.draw(HSV((x + y + z) * 10));
+				}
+			}
+		}
+	}
+}
+```
+
