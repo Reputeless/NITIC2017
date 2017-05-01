@@ -401,3 +401,37 @@ void Main()
 }
 ```
 
+途中その 2
+```cpp
+# include <Siv3D.hpp>
+
+void Main()
+{
+	double r = 0.0;
+
+	Mesh box(MeshData::Box6());
+
+	const Texture texture(L"Example/Windmill.png");
+
+	while (System::Update())
+	{
+		r += 0.01;
+
+		Graphics3D::FreeCamera();
+
+		for (int z = 0; z < 3; ++z)
+		{
+			for (int y = 0; y < 3; ++y)
+			{
+				for (int x = 0; x < 3; ++x)
+				{
+					box
+						.translated(x - 1, y - 1, z - 1)
+						.rotated(Quaternion::RollPitchYaw(0, r, 0))
+						.draw(texture);
+				}
+			}
+		}
+	}
+}
+```
